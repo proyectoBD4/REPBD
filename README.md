@@ -56,3 +56,50 @@ Este repositorio me permite mantener organizado mi proyecto de base de datos. Aq
 - Autor: <Tu nombre>
 - Fecha: <Fecha de entrega o creación>
 
+
+---
+
+## 🧪 Ejemplos de consultas a la base de datos (Supabase)
+
+### 📄 Tabla: `libros`
+
+| id | titulo                 | autor           | disponible |
+|----|------------------------|------------------|------------|
+| 1  | Cien Años de Soledad   | Gabriel García Márquez | true       |
+| 2  | El Principito          | Antoine de Saint-Exupéry | false     |
+| 3  | Rayuela                | Julio Cortázar   | true       |
+
+**Consulta SQL para ver todos los libros:**
+```sql
+SELECT * FROM libros;
+SELECT libros.titulo, usuarios.nombre
+FROM prestamos
+JOIN libros ON libros.id = prestamos.id_libro
+JOIN usuarios ON usuarios.id = prestamos.id_usuario;
+
+#**Agrego ejemplos de datos y consultas SQL para demostrar la base**
+
+Tablas:
+- libros
+- usuarios
+- prestamos
+
+libros:
+| id | titulo               | autor                  | disponible |
+|----|----------------------|------------------------|------------|
+| 1  | Cien Años de Soledad | Gabriel García Márquez | true       |
+| 2  | El Principito        | Antoine de Saint-Exupéry | false     |
+| 3  | Rayuela              | Julio Cortázar         | true       |
+
+usuarios:
+| id | nombre     | correo              |
+|----|------------|---------------------|
+| 1  | Ana Torres | ana@gmail.com       |
+| 2  | Luis Pérez | luisp@hotmail.com   |
+| 3  | Marta Díaz | marta@gmail.com     |
+
+prestamos:
+| id | id_usuario | id_libro | fecha     |
+|----|------------|----------|-----------|
+| 1  | 1          | 2        | 2025-05-21 |
+| 2  | 2          | 1        | 2025-05-20 |
